@@ -42,4 +42,41 @@ a.icon > strong {margin-left:.25rem}
 .carousel-cell {width:100%}
 // Flickity - end
 
+
+// PROJECT AND BLOG TILES STYLING
+// This is the class for the images of the projects and blog tiles 
+.responsive-img {
+    width: 100%;      /* Make image width fill the container */
+    height: auto;     /* Maintain aspect ratio */
+    object-fit: contain; /* Cover container while maintaining aspect ratio */
+  }
+
+
+// Ensure the tags are anchored to the bottom of the tile
+/* Make the article a flex container to align children */
+.tile.is-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes tags to the bottom */
+  }
+  
+  /* Optional: styling for tags-container */
+  .tags-container {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color: rgba(240, 240, 240, 0.9); /* Light background */   
+  }
+  
+  /* Tag styling */
+  .tag {
+    // background-color: #347dcc;
+    // color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+  }
+  
+
  
