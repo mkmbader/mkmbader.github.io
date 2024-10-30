@@ -4,16 +4,16 @@
 <head>
   <title>Maria Bader</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="icon" href="favicon.png" type="image/x-icon"> -->
+  <!-- <script src="https://kit.fontawesome.com/4e5a72c756.js"></script> -->
+  <script src="https://kit.fontawesome.com/9784bee2e8.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/main.bundle.css">
-  <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
 </head>
 
 <body>
   <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <div class="navbar-item is-hidden-desktop">
-        <a href="https://github.com/mkmbader" class="icon is-large has-text-light">
+        <a href="https://github.com/mkmbader" class="icon is-large has-text-light" >
           <i class="fab fa-2x fa-github"></i>
         </a>
       </div>
@@ -26,7 +26,7 @@
     <div class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <a href="https://github.com/mkmbader" class="icon is-large has-text-light">
+          <a href="https://github.com/mkmbader" class="icon is-large has-text-light" style="color: #333;">
             <i class="fab fa-2x fa-github"></i>
           </a>
         </div>
@@ -52,7 +52,7 @@
         <div class="columns has-text-centered">
           <div class="column">
             <h1 class="title is-1">
-              dr. Maria Bader
+              dr. Maria Bader <i class="fas fa-check"></i>
             </h1>
             <h2 class="subtitle">
               Data Science / GenAI
@@ -75,7 +75,11 @@
       <p>I am a Data Scientist, who is specialised in both, traditional machine learning and generative AI techniques. My background as a researcher fuelled my love for unraveling hidden details in data and has equipped me with the unique ability to approach complex problems with a scientific mindset.</p>
     </div>
   </section>
-  <!-- <section class="section">
+
+  
+
+
+  <section class="section">
     <div class="container">
       <h1 class="title">Experience</h1>
       <hr />
@@ -144,7 +148,7 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <section class="section">
     <div class="container">
@@ -183,7 +187,7 @@
               </article>
             </div>
             <div class="tile is-parent">
-              <article class="tile is-child notification modal-trigger" data-target="project-3-modal">
+              <article class="tile is-child notification" data-target="project-3-modal">
                 <p class="title">Mapping hunger risk in Suriname</p>
                 <figure class="image is-4by3">
                   <img src="img/CorrelaidSuriname/logo.png">
@@ -236,39 +240,39 @@
 
   <section class="section">
     <div class="container">
-      <h1 class="title">Blog</h1>
+      <h1 class="title">Blog & Bites</h1>
       <hr />
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-12">
           <div class="tile">
             <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Project title</p>
+              <article class="tile is-child notification modal-trigger" data-target="poetry" >
+                <p class="title">Poetry dependency manager</p>
                 <figure class="image is-3by2">
-                  <img class="modal-trigger" data-target="project-1-modal" src="img/project-1-cover.png">
+                  <img src="img/blogs/covers/pexels-evie-shaffer-1259279-12660549.jpg">
+                </figure>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification modal-trigger" data-target="jupyter-kernel">
+                <p class="title">Custom Jupyter kernel</p>
+                <figure class="image is-4by3">
+                  <img src="img/blogs/covers/evie-s-LpTdsU5KA5c-unsplash.jpg">
                 </figure>
               </article>
             </div>
             <div class="tile is-parent">
               <article class="tile is-child notification">
-                <p class="title">Project title</p>
+                <p class="title">Git basics cheatsheet</p>
                 <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-2-modal" src="img/project-2-cover.png">
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Project title</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-3-modal" src="img/project-3-cover.png">
+                  <img  data-target="project-3-modal" src="img/blogs/covers/pexels-evie-shaffer-1259279-12660550.jpg">
                 </figure>
               </article>
             </div>
           </div>
         </div>
       </div>
-      <div class="tile is-ancestor">
+      <!-- <div class="tile is-ancestor">
         <div class="tile is-vertical is-12">
           <div class="tile">
             <div class="tile is-parent">
@@ -296,7 +300,7 @@
               </article>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -385,51 +389,73 @@
 
 
   <!-- Modal blog-->
-  <div id="project-1-modal" class="modal">
+  <div id="poetry" class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
+        <p class="modal-card-title">Poetry dependency manager</p>
         <button class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-
-        <div id="project-1-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
         <div class="content">
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-
+          <p><a href="https://python-poetry.org/">Poetry</a> is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you. Here, I explore the basic steps to set up your git repo with a poetry environment.</p>
+          <h5>First setup</h5>
+          <ul>
+            <li>To make sure Poetry is installed on your system, follow the guide 
+              <a href="https://python-poetry.org/docs/" target="_blank">here</a>.
+            </li>
+            <li>Set up a Git repository, clone it, and step into that repository.</li>
+            <li>Set up a new base Poetry environment with either:
+              <ul>
+                <li><code>poetry new .</code> to set it up in the current directory</li>
+                <li>OR, create a new folder with <code>poetry new &lt;folder name&gt;</code></li>
+              </ul>
+            </li>
+            <li>This creates a file called <code>pyproject.toml</code>, which will contain your dependencies.</li>
+            <li>Use <code>poetry add &lt;package name&gt;</code> to automatically install and add packages to your <code>.toml</code> file.</li>
+            <li>You can also add packages manually to your Poetry environment. After adding the dependencies, you need to:
+              <ul>
+                <li><code>poetry lock</code> to update the dependencies</li>
+                <li><code>poetry install</code> to install your new environment, based on the lock file</li>
+              </ul>
+            </li>
+            <li>To spawn your environment, use: <code>poetry shell</code></li>
+          </ul>
+          <p>Cover photo by <a href="https://unsplash.com/@evieshaffer" target="_blank" style="color: #b0b0b0;">Evie Shaffer</a></p>.
         </div>
-
       </section>
       <footer class="modal-card-foot">
         <button class="button is-success">Close</button>
       </footer>
     </div>
   </div>
-
+  <div id="jupyter-kernel" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Custom Jupyter Kernel</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="content">
+          <p>Step-by-step procedure:</p>
+          <ul>
+            <li>In your shell, type 
+              <code>{python_executable} -m ipykernel install --user --name={custom name of your kernel}</code>. 
+              For example: <code>python3 -m ipykernel install --user --name=example_project</code>.
+            </li>
+            <li><strong>Note:</strong> The Python executable to use should be the same as the Python version used in your Poetry environment.</li>
+            <li>Wait a bit, and the custom kernel will pop up in your Jupyter notebook UI.</li>
+          </ul>
+          
+          <p>Cover photo by <a href="https://unsplash.com/photos/a-plant-with-green-leaves-on-a-white-background-LpTdsU5KA5c" target="_blank" style="color: #b0b0b0;">Evie Shaffer</a></p>.
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
 
   <!-- Modals projects-->
   <div id="project-1-modal-projects" class="modal">
