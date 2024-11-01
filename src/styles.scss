@@ -81,6 +81,22 @@ a.icon > strong {margin-left:.25rem}
   .center-text {
     text-align: center; /* Centers text horizontally */
   }
+
+
+  .project-title {
+    font-size: 30px; /* Adjust as needed */
+  }
+
+
+
+// if the card title is too long the text gets cut
+.modal-card-title {
+  white-space: normal; /* Allow text to wrap */
+  overflow-wrap: break-word; /* Break long words if necessary */
+  word-wrap: break-word; /* Fallback for older browsers */
+  overflow: visible; /* Ensure overflow is visible */
+  max-width: 100%; /* Fit within container */
+}
   
 
  
