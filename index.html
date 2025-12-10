@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Bader - AI/ML Engineer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="mailto:dummy@dummymail.com" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="https://github.com/mkmbader" class="nav-link" target="_blank">GitHub</a></li>
+                <li class="nav-item"><a href="https://www.linkedin.com/in/mkmbader/" class="nav-link" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="name-box">
+                <h1 class="hero-name">Maria Bader</h1>
+            </div>
+            <p class="hero-title">AI/ML Engineer</p>
+            <p class="hero-subtitle">Building intelligent solutions for tomorrow's challenges</p>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-container">
+                <button class="nav-arrow nav-arrow-left" id="scrollLeft">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project tiles will be dynamically inserted here -->
+                </div>
+                <button class="nav-arrow nav-arrow-right" id="scrollRight">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="pagination-dots" id="paginationDots">
+                <!-- Dots will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a passionate AI/ML Engineer with expertise in developing intelligent solutions that solve real-world problems. My work spans across computer vision, natural language processing, predictive analytics, and autonomous systems.</p>
+                    <p>With a strong background in both theoretical foundations and practical implementation, I bridge the gap between cutting-edge research and production-ready systems. I'm particularly interested in the intersection of AI and healthcare, sustainable technology, and human-computer interaction.</p>
+                    <p>When I'm not coding or training models, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge through technical writing and speaking at conferences.</p>
+                    <div class="social-icons">
+                        <a href="mailto:dummy@dummymail.com" class="social-icon">
+                            <i class="fas fa-2x fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/mkmbader" target="_blank" class="social-icon">
+                            <i class="fab fa-2x fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mkmbader/" target="_blank" class="social-icon">
+                            <i class="fab fa-2x fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Project details will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
