@@ -416,6 +416,11 @@ body {
     color: white;
     position: relative;
     overflow: hidden;
+    /* Improve rendering performance */
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: auto;
 }
 
 .project-image::before {
@@ -685,6 +690,7 @@ body {
     
     .hero {
         padding: 2rem;
+        background-attachment: scroll; /* Fix parallax issues on mobile */
     }
     
     .name-box {
@@ -697,26 +703,55 @@ body {
     }
     
     .projects-container {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 0.5rem;
     }
     
     .nav-arrow {
-        display: none;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        z-index: 20;
     }
     
     .pagination-dots {
-        display: none;
+        display: flex;
+        margin-top: 1.5rem;
     }
     
     .projects-grid {
-        flex-direction: column;
-        overflow-x: visible;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        gap: 0;
+        padding: 1rem 0;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        scrollbar-width: none; /* Hide scrollbar on Firefox */
+        -ms-overflow-style: none; /* Hide scrollbar on IE/Edge */
+    }
+    
+    .projects-grid::-webkit-scrollbar {
+        display: none; /* Hide scrollbar on WebKit browsers */
     }
     
     .project-tile {
         padding: 1.5rem;
-        min-width: unset;
-        width: 100%;
+        min-width: calc(100vw - 140px); /* Full width minus arrows and padding */
+        width: calc(100vw - 140px);
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        margin-right: 1rem;
+        /* Improve rendering performance */
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        will-change: transform;
+    }
+    
+    .project-tile:last-child {
+        margin-right: 0;
     }
     
     .about {
@@ -780,5 +815,19 @@ body {
     
     .hero-content {
         padding: 0 1rem;
+    }
+    
+    .project-tile {
+        min-width: calc(100vw - 100px); /* Adjust for smaller arrows */
+        width: calc(100vw - 100px);
+    }
+    
+    .nav-arrow {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .projects-container {
+        gap: 0.25rem;
     }
 }

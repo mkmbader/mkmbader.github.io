@@ -150,6 +150,16 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         updatePaginationOnScroll();
     }, 100);
+    
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            createPaginationDots();
+            updatePaginationOnScroll();
+        }, 250);
+    });
 });
 
 function initializeElements() {
@@ -177,9 +187,17 @@ function createPaginationDots() {
     
     paginationDots.innerHTML = '';
     
-    // Calculate number of pages (3 projects per page)
-    const projectsPerPage = 3;
-    const totalPages = Math.ceil(projects.length / projectsPerPage);
+    const isMobile = window.innerWidth <= 768;
+    let totalPages;
+    
+    if (isMobile) {
+        // For mobile: one dot per project
+        totalPages = projects.length;
+    } else {
+        // Desktop: calculate based on projects per page
+        const projectsPerPage = 3;
+        totalPages = Math.ceil(projects.length / projectsPerPage);
+    }
     
     for (let i = 0; i < totalPages; i++) {
         const dot = document.createElement('div');
@@ -196,7 +214,17 @@ function createPaginationDots() {
 
 function scrollToPage(pageIndex) {
     const projectsGrid = document.getElementById('projectsGrid');
-    const scrollAmount = projectsGrid.clientWidth * pageIndex;
+    const isMobile = window.innerWidth <= 768;
+    
+    let scrollAmount;
+    if (isMobile) {
+        // For mobile: scroll to specific project
+        const tileWidth = projectsGrid.querySelector('.project-tile')?.offsetWidth + 16;
+        scrollAmount = tileWidth * pageIndex;
+    } else {
+        // Desktop: scroll by container width
+        scrollAmount = projectsGrid.clientWidth * pageIndex;
+    }
     
     projectsGrid.scrollTo({
         left: scrollAmount,
@@ -311,23 +339,40 @@ function scrollProjectsLeft() {
     const projectsGrid = document.getElementById('projectsGrid');
     if (!projectsGrid) return;
     
+    const isMobile = window.innerWidth <= 768;
     const currentScroll = projectsGrid.scrollLeft;
     const containerWidth = projectsGrid.clientWidth;
     const maxScroll = projectsGrid.scrollWidth - containerWidth;
     
-    if (currentScroll <= 0) {
-        // At the beginning, scroll to the end (circular behavior)
-        projectsGrid.scrollTo({
-            left: maxScroll,
-            behavior: 'smooth'
-        });
+    if (isMobile) {
+        // For mobile: scroll exactly one tile width
+        const tileWidth = projectsGrid.querySelector('.project-tile')?.offsetWidth + 16; // Include margin
+        if (currentScroll <= 0) {
+            // At the beginning, scroll to the end (circular behavior)
+            projectsGrid.scrollTo({
+                left: maxScroll,
+                behavior: 'smooth'
+            });
+        } else {
+            projectsGrid.scrollBy({
+                left: -tileWidth,
+                behavior: 'smooth'
+            });
+        }
     } else {
-        // Normal scroll left
-        const scrollAmount = containerWidth * 0.8;
-        projectsGrid.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
+        // Desktop behavior
+        if (currentScroll <= 0) {
+            projectsGrid.scrollTo({
+                left: maxScroll,
+                behavior: 'smooth'
+            });
+        } else {
+            const scrollAmount = containerWidth * 0.8;
+            projectsGrid.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     }
 }
 
@@ -335,23 +380,40 @@ function scrollProjectsRight() {
     const projectsGrid = document.getElementById('projectsGrid');
     if (!projectsGrid) return;
     
+    const isMobile = window.innerWidth <= 768;
     const currentScroll = projectsGrid.scrollLeft;
     const containerWidth = projectsGrid.clientWidth;
     const maxScroll = projectsGrid.scrollWidth - containerWidth;
     
-    if (currentScroll >= maxScroll - 10) { // Small tolerance for precision
-        // At the end, scroll to the beginning (circular behavior)
-        projectsGrid.scrollTo({
-            left: 0,
-            behavior: 'smooth'
-        });
+    if (isMobile) {
+        // For mobile: scroll exactly one tile width
+        const tileWidth = projectsGrid.querySelector('.project-tile')?.offsetWidth + 16; // Include margin
+        if (currentScroll >= maxScroll - 10) {
+            // At the end, scroll to the beginning (circular behavior)
+            projectsGrid.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            projectsGrid.scrollBy({
+                left: tileWidth,
+                behavior: 'smooth'
+            });
+        }
     } else {
-        // Normal scroll right
-        const scrollAmount = containerWidth * 0.8;
-        projectsGrid.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
+        // Desktop behavior
+        if (currentScroll >= maxScroll - 10) {
+            projectsGrid.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            const scrollAmount = containerWidth * 0.8;
+            projectsGrid.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     }
 }
 
@@ -359,11 +421,21 @@ function updatePaginationOnScroll() {
     const projectsGrid = document.getElementById('projectsGrid');
     if (!projectsGrid) return;
     
+    const isMobile = window.innerWidth <= 768;
     const scrollLeft = projectsGrid.scrollLeft;
-    const containerWidth = projectsGrid.clientWidth;
-    const currentPage = Math.round(scrollLeft / containerWidth);
     
-    updateActiveDot(currentPage);
+    let currentPage;
+    if (isMobile) {
+        // For mobile: calculate based on individual tile positions
+        const tileWidth = projectsGrid.querySelector('.project-tile')?.offsetWidth + 16;
+        currentPage = Math.round(scrollLeft / tileWidth);
+    } else {
+        // Desktop: calculate based on container width
+        const containerWidth = projectsGrid.clientWidth;
+        currentPage = Math.round(scrollLeft / containerWidth);
+    }
+    
+    updateActiveDot(Math.max(0, Math.min(currentPage, projects.length - 1)));
 }
 
 function setupScrollEffects() {
@@ -375,10 +447,13 @@ function setupScrollEffects() {
         const scrolled = window.pageYOffset;
         const parallaxSpeed = 0.5;
         const fadeSpeed = 1.5;
+        const isMobile = window.innerWidth <= 768;
         
-        // Parallax effect
-        if (hero) {
+        // Disable parallax on mobile for better performance
+        if (hero && !isMobile) {
             hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+        } else if (hero && isMobile) {
+            hero.style.transform = 'none';
         }
         
         // Fade effect for hero content
@@ -429,25 +504,47 @@ function setupScrollEffects() {
 // Touch/swipe support for mobile
 let touchStartX = 0;
 let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
+let isProjectsGridTouch = false;
 
 function handleSwipe() {
-    const swipeThreshold = 50;
-    const swipeDistance = touchEndX - touchStartX;
+    if (!isProjectsGridTouch) return;
     
-    if (Math.abs(swipeDistance) > swipeThreshold) {
-        // Add swipe functionality here if needed for project navigation
-        console.log('Swipe detected:', swipeDistance > 0 ? 'right' : 'left');
+    const swipeThreshold = 50;
+    const swipeDistanceX = touchEndX - touchStartX;
+    const swipeDistanceY = Math.abs(touchEndY - touchStartY);
+    
+    // Only handle horizontal swipes (avoid interfering with vertical scroll)
+    if (Math.abs(swipeDistanceX) > swipeThreshold && swipeDistanceY < 100) {
+        if (swipeDistanceX > 0) {
+            // Swipe right - go to previous project
+            scrollProjectsLeft();
+        } else {
+            // Swipe left - go to next project
+            scrollProjectsRight();
+        }
     }
 }
 
 document.addEventListener('touchstart', function(e) {
-    touchStartX = e.changedTouches[0].screenX;
-});
+    const projectsGrid = document.getElementById('projectsGrid');
+    isProjectsGridTouch = projectsGrid && projectsGrid.contains(e.target);
+    
+    if (isProjectsGridTouch) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }
+}, { passive: true });
 
 document.addEventListener('touchend', function(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
+    if (isProjectsGridTouch) {
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        handleSwipe();
+    }
+    isProjectsGridTouch = false;
+}, { passive: true });
 
 // Keyboard navigation
 document.addEventListener('keydown', function(e) {
