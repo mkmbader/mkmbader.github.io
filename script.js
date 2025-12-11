@@ -1,9 +1,9 @@
 // Project data - Real projects
 const projects = [
     {
-        id: 1,
+        id: 2,
         title: "AI-Translator for Dutch Municipalities and Asylum Seekers",
-        shortDescription: "AI translation app designed for municipalities and status holders in the Netherlands to facilitate communication and access to important information.",
+        shortDescription: "AI translation app of 2025 designed for municipalities and status holders in the Netherlands to facilitate communication and access to important information.",
         fullDescription: `With Mokin we focus on providing an AI translation app specifically designed for municipalities and status holders in the Netherlands. It aims to facilitate communication by offering translation services to help non-Dutch speakers access important information and services.
 
         Key Features:<br>• <strong>Government Services:</strong> Specialized translation for Dutch government and municipal services<br>• <strong>Target Users:</strong> Designed for asylum seekers and status holders<br>• <strong>Accessibility:</strong> Focus on user-friendly design and ease of use<br>• <strong>Community Impact:</strong> Valuable resource for local governments and communities<br>• <strong>Language Barriers:</strong> Helps bridge communication gaps in essential services
@@ -17,9 +17,9 @@ const projects = [
         ]
     },
     {
-        id: 2,
+        id: 3,
         title: "Tracking Landscape Vitality with Sensing Clues",
-        shortDescription: "Geospatial data analysis project creating a Shiny app to monitor vegetation health in African and European conservation areas using satellite imagery.",
+        shortDescription: "Geospatial data analysis project of 2025 creating a Shiny app to monitor vegetation health in African and European conservation areas using satellite imagery.",
         fullDescription: `Collaborated with Sensing Clues and CorrelAidNL to create a data-driven conservation tool for monitoring vegetation health across four conservation sites in Zambia, Spain, Bulgaria, and Kenya.
 
         Project Overview:<br>• <strong>Shiny Application:</strong> Developed interactive tool for field partners and conservation organizations<br>• <strong>Satellite Data:</strong> Used Sentinel-2 satellite data and Google Earth Engine for NDVI analysis<br>• <strong>Trend Analysis:</strong> Analyzed vegetation health trends from 2019-2024 across multiple conservation areas<br>• <strong>Heatmaps:</strong> Created Delta NDVI heatmaps showing vegetation changes over time<br>• <strong>Land Coverage:</strong> Integrated land coverage data to provide context for environmental changes
@@ -38,7 +38,7 @@ const projects = [
         ]
     },
     {
-        id: 3,
+        id: 7,
         title: "Mapping Hunger Risk in Suriname",
         shortDescription: "Data science volunteer project analyzing hunger risk factors in Suriname during COVID-19 and economic challenges.",
         fullDescription: `In 2020/2021, I joined CorrelAidxNL as a Data Science volunteer to collaborate with Smart Lifestyle Connection on a critical humanitarian project. This initiative focused on mapping out hunger risk levels in Suriname during a period of multiple crises.
@@ -59,9 +59,9 @@ const projects = [
         ]
     },
     {
-        id: 4,
+        id: 5,
         title: "PhD Research: Gravitational Waves & Newtonian Noise",
-        shortDescription: "Research on seismic models and Newtonian noise for gravitational wave detectors, including Advanced Virgo and Einstein Telescope.",
+        shortDescription: "Prize winning research on seismic models and Newtonian noise for gravitational wave detectors, including Advanced Virgo and Einstein Telescope (2020).",
         fullDescription: `Successfully defended my PhD thesis on February 9, 2020, focusing on gravitational wave detection and seismic noise modeling. The research addresses fundamental challenges in measuring gravitational waves and understanding the Universe's composition.
 
         Research Highlights:<br>• <strong>Seismic Modeling:</strong> Developed site-based seismic models for Advanced Virgo (Italy) and Einstein Telescope candidate sites<br>• <strong>Newtonian Noise:</strong> Modeled Newtonian noise from complex multilayered geological structures<br>• <strong>Control Systems:</strong> Analyzed performance of angular control systems at Advanced Virgo<br>• <strong>Underground Detectors:</strong> Created realistic underground detector models for next-generation facilities<br>• <strong>Site Selection:</strong> Contributed to Einstein Telescope site selection criteria
@@ -77,7 +77,7 @@ const projects = [
         ]
     },
     {
-        id: 5,
+        id: 1,
         title: "How to Keep Your LLM Chatbots Real: A Metrics Survival Guide",
         shortDescription: "PyData Amsterdam 2025 talk on methodologies for measuring performance of LLM-powered chatbots with practical metrics and evaluation frameworks.",
         fullDescription: `Presented at PyData Amsterdam 2025 on comprehensive evaluation methodologies for LLM-powered chatbots, moving beyond "vibe coding" to structured performance measurement.
@@ -94,6 +94,44 @@ const projects = [
             { text: "Watch on YouTube", url: "https://www.youtube.com/watch?v=b12AicI0-Ys" },
             { text: "View Slides", url: "https://github.com/mkmbader/catbot/blob/main/pydata/slides.pdf", secondary: true }
         ]
+    },
+    {
+        id: 6,
+        title: "CatBot: RAG Evaluation Demo with Ragas",
+        shortDescription: "A c(h)atbot demonstration project showcasing RAG evaluation methodologies using Ragas, built to accompany the PyData Amsterdam 2025 presentation.",
+        fullDescription: `Meet CatBot - the c(h)atbot who knows all about cats, based on simple Wikipedia data. CatBot serves as a practical demonstration of RAG evaluation techniques and was developed to fuel the PyData Amsterdam 2025 presentation on LLM chatbot metrics.
+
+        Technical Implementation:<br>• <strong>Database Creation:</strong> Initializes ChromaDB for efficient data storage and retrieval<br>• <strong>RAG QA System:</strong> Builds question-answering system using Retrieval-Augmented Generation techniques<br>• <strong>Synthetic Datasets:</strong> Utilizes Ragas with custom prompts to generate synthetic QA datasets<br>• <strong>Automated Evaluation:</strong> Assesses QA system responses using comprehensive Ragas metrics<br>• <strong>Practical Demo:</strong> Provides hands-on example of evaluation methodologies in action
+
+        Evaluation Metrics:<br>• <strong>Faithfulness:</strong> Measures how well answers stay true to the retrieved context<br>• <strong>Answer Correctness:</strong> Evaluates accuracy of responses against ground truth<br>• <strong>Answer Relevancy:</strong> Assesses how relevant answers are to the input questions<br>• <strong>Context Precision:</strong> Measures quality of retrieved document relevance<br>• <strong>Comprehensive Workflow:</strong> End-to-end pipeline from data ingestion to evaluation
+
+        Impact:
+        This project provides a concrete, reproducible example of RAG evaluation best practices, serving as both a learning resource and a practical template for implementing structured evaluation in production LLM systems.`,
+        tags: ["RAG", "Ragas", "ChromaDB", "LLM Evaluation", "Python", "Jupyter"],
+        image: "🐱",
+        links: [
+            { text: "View on GitHub", url: "https://github.com/mkmbader/catbot/tree/main" },
+            { text: "Jupyter Notebook", url: "https://github.com/mkmbader/catbot/blob/main/main.ipynb", secondary: true }
+        ]
+    },
+    {
+        id: 4,
+        title: "Workshop: Introduction to Agents with LangChain.",
+        shortDescription: "PyData & PyLadies Amsterdam 2024 workshop teaching participants to build LLM agents using LangChain with hands-on coding exercises.",
+        fullDescription: `Led a comprehensive workshop at PyData and PyLadies Amsterdam in June 2024, introducing participants to the fundamentals of building LLM agents with LangChain through practical, hands-on exercises.
+
+        Workshop Content:<br>• <strong>Agent Fundamentals:</strong> Key concepts and architecture of LLM agents using LangChain<br>• <strong>Hands-on Building:</strong> Step-by-step guidance to create participants' own functional agents<br>• <strong>Custom Tools:</strong> Teaching participants to build custom tools for their specific use cases<br>• <strong>Practical Application:</strong> Real-world examples and implementation strategies<br>• <strong>Interactive Learning:</strong> Jupyter notebook-based exercises with immediate feedback
+
+        Learning Outcomes:<br>• <strong>Core Concepts:</strong> Understanding LLM agent architecture and workflow patterns<br>• <strong>LangChain Mastery:</strong> Practical skills in using LangChain for agent development<br>• <strong>Tool Development:</strong> Ability to create custom tools and integrate external APIs<br>• <strong>Production Ready:</strong> Code and patterns ready for real-world implementation<br>• <strong>Community Building:</strong> Connecting with Amsterdam's Python and AI community
+
+        Community Impact:
+        This workshop bridged the gap between theoretical knowledge and practical implementation, empowering participants to build their own AI agents and contributing to the growth of Amsterdam's tech community through PyLadies and PyData networks.`,
+        tags: ["LangChain", "Agents", "Python", "Workshop", "PyLadies", "Education"],
+        image: "👩‍🏫",
+        links: [
+            { text: "Workshop Materials", url: "https://github.com/pyladiesams/introduction-to-llm-agents-with-langchain-jun2024" },
+            { text: "PyLadies Amsterdam", url: "https://amsterdam.pyladies.com/", secondary: true }
+        ]
     }
 ];
 
@@ -106,6 +144,8 @@ let closeModal;
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     initializeElements();
+    // Sort projects by ID before rendering
+    projects.sort((a, b) => a.id - b.id);
     renderProjects();
     setupEventListeners();
     setupScrollEffects();
