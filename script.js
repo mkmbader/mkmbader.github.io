@@ -75,6 +75,25 @@ const projects = [
             { text: "Read Thesis", url: "https://www.nikhef.nl/pub/services/biblio/theses_pdf/thesis_M_K_M_Bader.pdf" },
             { text: "Jan Kluyver Prize", url: "https://www.nikhef.nl/en/news/phd-thesis-prize-winner-maria-bader-summary-gives-your-adventures-coherence/", secondary: true }
         ]
+    },
+    {
+        id: 5,
+        title: "How to Keep Your LLM Chatbots Real: A Metrics Survival Guide",
+        shortDescription: "PyData Amsterdam 2025 talk on methodologies for measuring performance of LLM-powered chatbots with practical metrics and evaluation frameworks.",
+        fullDescription: `Presented at PyData Amsterdam 2025 on comprehensive evaluation methodologies for LLM-powered chatbots, moving beyond "vibe coding" to structured performance measurement.
+
+        Talk Overview:<br>• <strong>Evaluation Dataset:</strong> Curating synthetic test sets using Ragas for comprehensive metrics<br>• <strong>RAG Metrics:</strong> Context Precision, Context Recall, Answer Relevancy, Answer Correctness, and Faithfulness<br>• <strong>Tool Comparison:</strong> Comparing MLFlow, DeepEval, and Ragas packages for metric calculation<br>• <strong>Custom Metrics:</strong> Hallucination Rate measurement and agentic framework evaluation<br>• <strong>Practical Guidance:</strong> Tips for selecting appropriate metrics for specific use cases
+
+        Key Topics Covered:<br>• <strong>Retriever Performance:</strong> Context Precision and Recall for document retrieval evaluation<br>• <strong>QA Evaluation:</strong> Answer relevancy, correctness, and faithfulness metrics<br>• <strong>Agentic Metrics:</strong> Tool Call Accuracy and workflow evaluation for agentic frameworks<br>• <strong>Open Source Tools:</strong> Practical comparison of evaluation packages and their implementations<br>• <strong>Best Practices:</strong> Methodology for selecting metrics that match your specific use case
+
+        Impact:
+        This session provided practical guidance for GenAI practitioners to implement structured evaluation processes, moving from ad-hoc testing to systematic performance measurement for production LLM applications.`,
+        tags: ["LLM Evaluation", "RAG", "MLOps", "Chatbots", "Public Speaking"],
+        image: "🎤",
+        links: [
+            { text: "Watch on YouTube", url: "https://www.youtube.com/watch?v=b12AicI0-Ys" },
+            { text: "View Slides", url: "https://github.com/mkmbader/catbot/blob/main/pydata/slides.pdf", secondary: true }
+        ]
     }
 ];
 
