@@ -1,134 +1,79 @@
-// Project data - Replace with your actual projects
+// Project data - Real projects
 const projects = [
     {
         id: 1,
-        title: "Computer Vision for Medical Diagnosis",
-        shortDescription: "AI-powered system for analyzing medical images and assisting in early disease detection.",
-        fullDescription: `This project develops a deep learning system for medical image analysis, specifically designed to assist radiologists in early disease detection. The system uses convolutional neural networks trained on large datasets of medical images to identify patterns that might be missed by human observation.
+        title: "AI-Translator for Dutch Municipalities and Asylum Seekers",
+        shortDescription: "AI translation app designed for municipalities and status holders in the Netherlands to facilitate communication and access to important information.",
+        fullDescription: `With Mokin we focus on providing an AI translation app specifically designed for municipalities and status holders in the Netherlands. It aims to facilitate communication by offering translation services to help non-Dutch speakers access important information and services.
 
-        Key Features:
-        • Real-time image analysis with 94% accuracy
-        • Integration with hospital PACS systems
-        • Automated report generation
-        • Multi-modal image support (X-ray, CT, MRI)
-        • HIPAA-compliant data processing
+        Key Features:<br>• <strong>Government Services:</strong> Specialized translation for Dutch government and municipal services<br>• <strong>Target Users:</strong> Designed for asylum seekers and status holders<br>• <strong>Accessibility:</strong> Focus on user-friendly design and ease of use<br>• <strong>Community Impact:</strong> Valuable resource for local governments and communities<br>• <strong>Language Barriers:</strong> Helps bridge communication gaps in essential services
 
-        The system has been tested in clinical environments and shows promising results in reducing diagnostic time while maintaining high accuracy rates.`,
-        tags: ["Python", "TensorFlow", "OpenCV", "Docker"],
-        image: "🏥",
+        The platform emphasizes user-friendly design and accessibility, making it an essential tool for improving communication between Dutch governments and non-native speakers.`,
+        tags: ["AI Translation", "NLP", "Accessibility", "Government Services"],
+        image: "🌐",
         links: [
-            { text: "View Project", url: "#" },
-            { text: "Research Paper", url: "#", secondary: true }
+            { text: "Visit Mokin.nl", url: "https://www.mokin.nl/" },
+            // { text: "Learn More", url: "#", secondary: true }
         ]
     },
     {
         id: 2,
-        title: "Natural Language Processing Chatbot",
-        shortDescription: "Intelligent conversational AI trained on domain-specific knowledge for customer support.",
-        fullDescription: `A sophisticated chatbot built using transformer architecture and fine-tuned on customer service interactions. The system understands context, maintains conversation history, and provides accurate responses to complex queries.
+        title: "Tracking Landscape Vitality with Sensing Clues",
+        shortDescription: "Geospatial data analysis project creating a Shiny app to monitor vegetation health in African and European conservation areas using satellite imagery.",
+        fullDescription: `Collaborated with Sensing Clues and CorrelAidNL to create a data-driven conservation tool for monitoring vegetation health across four conservation sites in Zambia, Spain, Bulgaria, and Kenya.
 
-        Technical Implementation:
-        • Based on GPT architecture with custom fine-tuning
-        • Real-time response generation under 200ms
-        • Multi-language support (English, Spanish, French)
-        • Integration with CRM systems
-        • Sentiment analysis for conversation routing
-        • Continuous learning from user interactions
+        Project Overview:<br>• <strong>Shiny Application:</strong> Developed interactive tool for field partners and conservation organizations<br>• <strong>Satellite Data:</strong> Used Sentinel-2 satellite data and Google Earth Engine for NDVI analysis<br>• <strong>Trend Analysis:</strong> Analyzed vegetation health trends from 2019-2024 across multiple conservation areas<br>• <strong>Heatmaps:</strong> Created Delta NDVI heatmaps showing vegetation changes over time<br>• <strong>Land Coverage:</strong> Integrated land coverage data to provide context for environmental changes
 
-        The chatbot has reduced customer service response time by 70% while maintaining 95% customer satisfaction scores.`,
-        tags: ["Python", "PyTorch", "Transformers", "FastAPI"],
-        image: "💬",
+        Technical Implementation:<br>• <strong>Data Processing:</strong> Processed geospatial satellite data using Python and R<br>• <strong>Visualizations:</strong> Built interactive visualizations with zoomable geographic plots<br>• <strong>Deployment:</strong> Deployed application using Docker containers<br>• <strong>Data Sources:</strong> Integrated multiple data sources including Copernicus Satellite data<br>• <strong>Monitoring Tools:</strong> Developed temporal analysis tools for seasonal vegetation monitoring
+
+        Impact:
+        The tool enables rangers and conservationists to make informed, data-driven decisions for sustainable landscape management, providing early warning systems for environmental threats and supporting proactive conservation efforts.
+
+        This project demonstrates the power of combining satellite technology, data science, and conservation expertise to protect global biodiversity.`,
+        tags: ["R", "Python", "GIS", "Satellite Data", "Conservation", "Shiny"],
+        image: "🛰️",
         links: [
-            { text: "Live Demo", url: "#" },
-            { text: "GitHub", url: "#", secondary: true }
+            { text: "View Shiny App", url: "https://analytical.sensingclues.org/environmentaltimeseries/" },
+            { text: "Sensing Clues", url: "https://www.sensingclues.org/", secondary: true }
         ]
     },
     {
         id: 3,
-        title: "Predictive Analytics Dashboard",
-        shortDescription: "Real-time machine learning platform for business intelligence and forecasting.",
-        fullDescription: `An end-to-end analytics platform that processes streaming data to generate real-time predictions and business insights. The system combines multiple ML models to provide accurate forecasts for various business metrics.
+        title: "Mapping Hunger Risk in Suriname",
+        shortDescription: "Data science volunteer project analyzing hunger risk factors in Suriname during COVID-19 and economic challenges.",
+        fullDescription: `In 2020/2021, I joined CorrelAidxNL as a Data Science volunteer to collaborate with Smart Lifestyle Connection on a critical humanitarian project. This initiative focused on mapping out hunger risk levels in Suriname during a period of multiple crises.
 
-        Platform Features:
-        • Real-time data ingestion from multiple sources
-        • Ensemble ML models for improved accuracy
-        • Interactive visualization dashboard
-        • Automated alert system for anomalies
-        • A/B testing framework for model comparison
-        • Scalable cloud infrastructure
+        Project Context:<br>• <strong>Natural Disasters:</strong> Country impacted by heavy rainfall and flooding<br>• <strong>COVID-19 Impact:</strong> Restrictions affecting food security<br>• <strong>Economic Crisis:</strong> Rising inflation creating economic hardship<br>• <strong>Response Planning:</strong> Need for data-driven humanitarian response planning
 
-        The platform processes over 1M data points daily and provides actionable insights that have increased business efficiency by 40%.`,
-        tags: ["Python", "React", "Apache Kafka", "AWS"],
-        image: "📊",
+        Key Contributions:<br>• <strong>Risk Analysis:</strong> Analyzed multiple risk factors affecting food security<br>• <strong>Modeling:</strong> Developed risk assessment models using available data<br>• <strong>Reporting:</strong> Created visualizations and reports for humanitarian organizations<br>• <strong>Collaboration:</strong> Collaborated with local and international stakeholders<br>• <strong>Impact:</strong> Provided actionable insights for intervention planning
+
+        Impact:
+        The analysis helped humanitarian organizations better understand the geographic and demographic distribution of hunger risk, enabling more targeted and effective relief efforts in affected communities.
+
+        This project demonstrates the power of data science for social good and international development work.`,
+        tags: ["Data Science", "Humanitarian Aid", "Risk Analysis", "Social Impact"],
+        image: "🌍",
         links: [
-            { text: "View Dashboard", url: "#" },
-            { text: "Documentation", url: "#", secondary: true }
+            { text: "CorrelAid NL", url: "https://correlaid.nl/" },
+            { text: "Smart Lifestyle Connection", url: "https://smartlifestyleconnection.org/", secondary: true }
         ]
     },
     {
         id: 4,
-        title: "Autonomous Drone Navigation",
-        shortDescription: "Computer vision and reinforcement learning system for autonomous drone flight paths.",
-        fullDescription: `A cutting-edge system that enables drones to navigate complex environments autonomously using computer vision and reinforcement learning. The system processes real-time camera feeds to make navigation decisions.
+        title: "PhD Research: Gravitational Waves & Newtonian Noise",
+        shortDescription: "Research on seismic models and Newtonian noise for gravitational wave detectors, including Advanced Virgo and Einstein Telescope.",
+        fullDescription: `Successfully defended my PhD thesis on February 9, 2020, focusing on gravitational wave detection and seismic noise modeling. The research addresses fundamental challenges in measuring gravitational waves and understanding the Universe's composition.
 
-        Core Technologies:
-        • Real-time object detection and tracking
-        • SLAM (Simultaneous Localization and Mapping)
-        • Deep reinforcement learning for path planning
-        • Edge computing for low-latency decisions
-        • Fail-safe mechanisms and collision avoidance
-        • Integration with flight control systems
+        Research Highlights:<br>• <strong>Seismic Modeling:</strong> Developed site-based seismic models for Advanced Virgo (Italy) and Einstein Telescope candidate sites<br>• <strong>Newtonian Noise:</strong> Modeled Newtonian noise from complex multilayered geological structures<br>• <strong>Control Systems:</strong> Analyzed performance of angular control systems at Advanced Virgo<br>• <strong>Underground Detectors:</strong> Created realistic underground detector models for next-generation facilities<br>• <strong>Site Selection:</strong> Contributed to Einstein Telescope site selection criteria
 
-        Successfully tested in various environments including indoor warehouses, outdoor construction sites, and emergency response scenarios.`,
-        tags: ["Python", "ROS", "CUDA", "C++"],
-        image: "🚁",
+        Key Contributions:<br>• <strong>Geological Impact:</strong> Advanced understanding of how local geology affects gravitational wave detector performance<br>• <strong>Numerical Methods:</strong> Developed numerical integration methods for seismic field analysis<br>• <strong>Noise Subtraction:</strong> Proposed online subtraction schemes for environmental noise monitoring<br>• <strong>Recognition:</strong> Jan Kluyver Prize winner for best English thesis summary
+
+        This work bridges theoretical physics and practical engineering challenges in one of the most sensitive measurement systems ever built.`,
+        tags: ["Gravitational Waves", "Physics", "Seismic Modeling", "Data Analysis"],
+        image: "🌌",
         links: [
-            { text: "Flight Demo", url: "#" },
-            { text: "Technical Report", url: "#", secondary: true }
-        ]
-    },
-    {
-        id: 5,
-        title: "Financial Fraud Detection System",
-        shortDescription: "Real-time anomaly detection system for identifying fraudulent transactions using ML.",
-        fullDescription: `A sophisticated fraud detection system that analyzes transaction patterns in real-time to identify potentially fraudulent activities. The system uses ensemble machine learning techniques to minimize false positives while catching actual fraud.
-
-        System Capabilities:
-        • Real-time transaction scoring (< 50ms response)
-        • Behavioral pattern analysis
-        • Network analysis for connected fraud
-        • Adaptive learning from new fraud patterns
-        • Integration with banking systems
-        • Comprehensive reporting and analytics
-
-        The system has achieved a 99.2% accuracy rate with less than 0.1% false positive rate, processing over 10M transactions daily.`,
-        tags: ["Python", "Scikit-learn", "Apache Spark", "PostgreSQL"],
-        image: "🛡️",
-        links: [
-            { text: "Case Study", url: "#" },
-            { text: "White Paper", url: "#", secondary: true }
-        ]
-    },
-    {
-        id: 6,
-        title: "Smart Agriculture IoT Platform",
-        shortDescription: "IoT sensors and ML algorithms for optimizing crop yields and resource management.",
-        fullDescription: `An integrated IoT platform that combines sensor data with machine learning to optimize agricultural processes. The system monitors soil conditions, weather patterns, and crop health to provide actionable recommendations to farmers.
-
-        Platform Components:
-        • Network of environmental sensors
-        • Satellite imagery integration
-        • Crop yield prediction models
-        • Automated irrigation control
-        • Pest and disease early warning system
-        • Mobile app for farmers
-
-        Pilot programs have shown 25% increase in crop yields and 30% reduction in water usage across participating farms.`,
-        tags: ["Python", "IoT", "TensorFlow", "Node.js"],
-        image: "🌱",
-        links: [
-            { text: "Platform Demo", url: "#" },
-            { text: "Research Paper", url: "#", secondary: true }
+            { text: "Read Thesis", url: "https://www.nikhef.nl/pub/services/biblio/theses_pdf/thesis_M_K_M_Bader.pdf" },
+            { text: "Jan Kluyver Prize", url: "https://www.nikhef.nl/en/news/phd-thesis-prize-winner-maria-bader-summary-gives-your-adventures-coherence/", secondary: true }
         ]
     }
 ];
@@ -247,8 +192,10 @@ function createProjectTile(project, index) {
     tile.style.animationDelay = `${index * 0.1}s`;
     
     tile.innerHTML = `
-        <h3 class="project-title">${project.title}</h3>
-        <p class="project-description">${project.shortDescription}</p>
+        <div class="project-content">
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-description">${project.shortDescription}</p>
+        </div>
         <div class="project-tags">
             ${project.tags.map(tag => 
                 `<span class="tag ${tag.toLowerCase().replace(/[^a-z0-9]/g, '')}">${tag}</span>`
@@ -264,6 +211,11 @@ function createProjectTile(project, index) {
 function openProjectModal(project) {
     modalBody.innerHTML = `
         <h2 class="modal-title">${project.title}</h2>
+        <div class="modal-links-top">
+            ${project.links.map(link => 
+                `<a href="${link.url}" class="modal-link-top ${link.secondary ? 'secondary' : ''}" target="_blank">${link.text}</a>`
+            ).join('')}
+        </div>
         <div class="modal-description">${project.fullDescription.replace(/\n\s+/g, '<br><br>')}</div>
         <div class="modal-tech">
             <h3>Technologies Used</h3>
@@ -272,11 +224,6 @@ function openProjectModal(project) {
                     `<span class="tag ${tag.toLowerCase().replace(/[^a-z0-9]/g, '')}">${tag}</span>`
                 ).join('')}
             </div>
-        </div>
-        <div class="modal-links">
-            ${project.links.map(link => 
-                `<a href="${link.url}" class="modal-link ${link.secondary ? 'secondary' : ''}" target="_blank">${link.text}</a>`
-            ).join('')}
         </div>
     `;
     
