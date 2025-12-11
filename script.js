@@ -213,8 +213,14 @@ function createProjectTile(project, index) {
     tile.innerHTML = `
         <div class="project-content">
             <h3 class="project-title">${project.title}</h3>
+            <div class="project-links">
+                ${project.links.map(link => 
+                    `<a href="${link.url}" class="project-link ${link.secondary ? 'secondary' : ''}" target="_blank" onclick="event.stopPropagation()">${link.text}</a>`
+                ).join('')}
+            </div>
             <p class="project-description">${project.shortDescription}</p>
         </div>
+        <div class="project-divider"></div>
         <div class="project-tags">
             ${project.tags.map(tag => 
                 `<span class="tag ${tag.toLowerCase().replace(/[^a-z0-9]/g, '')}">${tag}</span>`
