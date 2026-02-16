@@ -249,6 +249,9 @@ function createProjectTile(project, index) {
     const tile = document.createElement('div');
     tile.className = 'project-tile';
     tile.style.animationDelay = `${index * 0.1}s`;
+    tile.setAttribute('data-project-id', project.id);
+    tile.setAttribute('role', 'button');
+    tile.setAttribute('tabindex', '0');
     
     tile.innerHTML = `
         <div class="project-content">
@@ -268,17 +271,41 @@ function createProjectTile(project, index) {
         </div>
     `;
     
-    tile.addEventListener('click', () => openProjectModal(project));
+    // Use both onclick and addEventListener for maximum compatibility
+    tile.onclick = function(e) {
+        if (e.target.tagName !== 'A') {
+            openProjectModal(project);
+        }
+    };
+    
+    tile.addEventListener('click', function(e) {
+        if (e.target.tagName !== 'A') {
+            openProjectModal(project);
+        }
+    });
+    
+    // Also support keyboard navigation
+    tile.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openProjectModal(project);
+        }
+    });
     
     return tile;
 }
 
 function openProjectModal(project) {
+    if (!modal || !modalBody) {
+        console.error('Modal elements not found!');
+        return;
+    }
+    
     modalBody.innerHTML = `
         <h2 class="modal-title">${project.title}</h2>
         <div class="modal-links-top">
             ${project.links.map(link => 
-                `<a href="${link.url}" class="modal-link-top ${link.secondary ? 'secondary' : ''}" target="_blank">${link.text}</a>`
+                `<a href="${link.url}" class="modal-link-top ${link.secondary ? 'secondary' : ''}" target="_blank" rel="noopener noreferrer">${link.text}</a>`
             ).join('')}
         </div>
         <div class="modal-description">${project.fullDescription.replace(/\n\s+/g, '<br><br>')}</div>
@@ -292,28 +319,61 @@ function openProjectModal(project) {
         </div>
     `;
     
+    // Set display using both methods for compatibility
     modal.style.display = 'block';
+    modal.style.visibility = 'visible';
+    modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    
+    // Focus management for accessibility
+    setTimeout(() => {
+        if (closeModal) {
+            closeModal.focus();
+        }
+    }, 100);
 }
 
 function closeProjectModal() {
+    if (!modal) return;
+    
     modal.style.display = 'none';
+    modal.style.visibility = 'hidden';
+    modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = 'auto';
 }
 
 function setupEventListeners() {
-    // Modal close events
-    closeModal.addEventListener('click', closeProjectModal);
+    // Modal close events - use both onclick and addEventListener
+    if (closeModal) {
+        closeModal.onclick = closeProjectModal;
+        closeModal.addEventListener('click', closeProjectModal);
+        
+        // Keyboard support for close button
+        closeModal.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                closeProjectModal();
+            }
+        });
+    }
     
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeProjectModal();
-        }
-    });
+    if (modal) {
+        modal.onclick = function(e) {
+            if (e.target === modal) {
+                closeProjectModal();
+            }
+        };
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeProjectModal();
+            }
+        });
+    }
     
     // Escape key to close modal
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
+        if (e.key === 'Escape' && modal && modal.style.display === 'block') {
             closeProjectModal();
         }
     });
